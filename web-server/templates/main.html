@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+   <title>Somnolence Statistiques</title>
+   <!-- Optional theme -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='test.css') }}">
+  
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+   <img id="plot" src="{{url_for('static', filename='figure.png')}}" align="middle"/>
+   <h1>Table des statistiques</h1>
+   <table class="table table-hover">
+     <tr><th>ID</th>
+     <th>Nombre </th>
+     <th>Date</th>
+     <th>Time</th>
+     <th>conducteur</th></tr>
+     {% for entry in readings %}
+        <tr><td>{{ entry.id }}</td>
+        <td>{{ entry.Numero }}</td>
+        <td>{{ entry.currentdate }}</td>
+        <td>{{ entry.currentime }}</td>
+        <td>{{ entry.conducteur }}</td></tr>
+     {% endfor %}
+   </table>
+</body>
+</html>
+
